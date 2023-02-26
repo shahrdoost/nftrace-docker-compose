@@ -1,0 +1,22 @@
+version: '3.5'
+
+services:
+  mongo:
+    container_name: mongo_container
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: rootrace
+      MONGO_INITDB_ROOT_PASSWORD: wefmdeNOIE920n2
+    volumes:
+      - mongo:/data/mongo
+    ports:
+      - "5689:27017"
+    networks:
+      - mongo
+    restart: unless-stopped
+networks:
+  mongo:
+    driver: bridge
+
+volumes:
+  mongo:

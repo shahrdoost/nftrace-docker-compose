@@ -1,0 +1,30 @@
+version: '3.5'
+
+services:
+  postgres:
+    container_name: postgres_container
+    image: postgres
+    environment:
+      POSTGRES_USER: postgresnft
+      POSTGRES_PASSWORD: S8u3f4wfujwo32fg982troW3jdbfS7N4g6v77y
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "3255:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+  postgres:
+
+
+
+
+
+
+

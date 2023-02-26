@@ -1,0 +1,24 @@
+version: '3.5'
+
+services:
+  redis:
+    container_name: redis_container
+    image: 'bitnami/redis:latest'
+    environment:
+      REDIS_PASSWORD: mxodwno6cHhkLYoSrfe7280ogU8eAxQ3vV9Eo6eGsNhQnOu+OfNCT2dhfqA+5rU2AAsFqo9pghY9XYQjsaft9DSkGcxdohd3083y03n02x
+    volumes:
+      - redis:/data/redis
+    ports:
+      - "3209:6379"
+    networks:
+      - redis
+    restart: unless-stopped
+networks:
+  redis:
+    driver: bridge
+
+volumes:
+  redis:
+
+
+

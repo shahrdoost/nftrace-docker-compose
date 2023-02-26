@@ -1,0 +1,26 @@
+version: '3.5'
+
+services:
+  rabbitmq:
+    container_name: rabbitmq_container
+    image: "rabbitmq:3-management"
+    environment:
+     RABBITMQ_USERNAME: "rabbitmqnft"
+     RABBITMQ_PASSWORD: 'mie8wfNH8owmpz23'
+    volumes:
+      - rabbitmq:/data/rabbitmq
+    ports:
+       - "4532:15672"
+       - "4578:5672"
+    networks:
+      - rabbitmq
+    restart: unless-stopped
+networks:
+  rabbitmq:
+    driver: bridge
+
+volumes:
+  rabbitmq:
+
+
+
